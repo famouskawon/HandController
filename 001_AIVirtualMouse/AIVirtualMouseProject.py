@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-import HandTrackingModule as htm
+# import HandTrackingModule as htm
 import time
 import autopy
 
@@ -17,4 +17,4 @@ while True:
     success, img = cap.read()
 
     cv2.imshow("Image",img)
-    cv2.waitkey(1)
+    cv2.waitKey(1)
