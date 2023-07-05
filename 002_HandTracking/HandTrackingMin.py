@@ -4,7 +4,7 @@ import time
 
 print("[Start] HandTrackingMin.py")
 
-cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
+cap = cv2.VideoCapture(0)
 
 if not cap.isOpened():
     print("Could not open webcam")
@@ -19,6 +19,7 @@ while True:
     success, img = cap.read()
     imgRGB = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
     results = hands.process(imgRGB)
+    print(results)
     print(results.multi_hand_landmarks)
     if results.multi_hand_landmarks:
         for handLms in results.multi_hand_landmarks:
